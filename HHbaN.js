@@ -1,7 +1,9 @@
-importScripts('/stuff/LyzaHBeO/WBv0kYC0.js');
-importScripts("/js/h.js");
+importScripts('stuff/LyzaHBeO/WBv0kYC0.js');
+importScripts("js/h.js");
  
 const blockedKeywords = _c.theBadKeywords;
+const _BP = (function(){ try { return new URL(self.registration.scope).pathname; } catch(e){ return "/"; } })();
+const _NZRE = new RegExp("^" + _BP.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "nZ970vr4/[a-z0-9]+/[a-z0-9]+/(.*)$", "i");
  
 
 const passthroughPatterns = [/education\/\/g(?:@|%40)mez/i];
@@ -17,7 +19,7 @@ function h7568(str) {
  
 function h7561(url) {
 	const match = new URL(url).pathname.match(
-		/^\/nZ970vr4\/[a-z0-9]+\/[a-z0-9]+\/(.*)$/i
+		_NZRE
 	);
 	if (!match) return null;
 	try {
@@ -51,7 +53,7 @@ async function handleRequest(event) {
 	// /bootstrap/assetswcptnsl0/25ei521o/https%3A%2F%2Fexample.com
  
 	const match = new URL(url).pathname.match(
-		/^\/nZ970vr4\/[a-z0-9]+\/[a-z0-9]+\/(.*)$/i
+		_NZRE
 	);
  
 	if (match) {
